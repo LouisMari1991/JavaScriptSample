@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>String基本功能</title>
+    <title>String对象</title>
 </head>
 <body>
 
 <script type="text/javascript" src="../js/out.js"></script>
+<script type="text/javascript" src="../js/stringtools.js"></script>
 
 <script type="text/javascript">
 
@@ -58,7 +59,22 @@
 
     str = trim(str);
 
-    alert("_"+str+"_");
+//    alert("_"+str+"_");
+
+
+
+</script>
+
+<script type="text/javascript">
+
+    // 给string的原型中添加一个功能。
+    // 注意：给对象添加新功能直接使用 对象.新内容 即可
+//    String.prototype.len = 199; // 给string原型对象添加一个属性名为len. 值为199.
+
+    // 添加行为
+    String.prototype.trim = trim;
+
+    println("haha".len);
 
 
 
