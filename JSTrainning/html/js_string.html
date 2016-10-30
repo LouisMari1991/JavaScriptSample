@@ -43,17 +43,22 @@
         start = 0;
         end = str.length - 1;
 
-        while (str <= end && str.charAt(start) != ' ') {
+        while (start <= end && str.charAt(start) == ' ') {
             start++;
         }
 
-        while (str <= end && str.charAt(end) != ' ') {
+        while (start <= end && str.charAt(end) == ' ') {
             end--;
         }
 
         return str.substring(start, end + 1);
     }
 
+    var str = "   sdfsf_  sdfsdf  ";
+
+    str = trim(str);
+
+    alert("_"+str+"_");
 
 
 
