@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合练习</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    /**
+     * 综合练习
+     *
+     * 1、定义功能，完成对数组的最值获取。
+     *
+     * 2、对数字排个序。
+     *
+     * 3、对元素差个找。
+     *
+     * 4、对数据元素进行反转。
+     *
+     */
+
+    // 取最值
+    function getMax(arr) {
+        var maxIndex = 0;
+        for (var x = 1; x < arr.length; x++) {
+            if (arr[x] > arr[maxIndex]) {
+                maxIndex = x;
+            }
+        }
+        return arr[maxIndex];
+    }
+
+    // 排序
+    function sortArray(arr) {
+        for (var x = 0; x < arr.length - 1; x++) {
+            for (var y = x + 1; y < arr.length; y++) {
+                if (arr[x] > arr[y]) {
+                    swap(arr, x, y);
+                }
+            }
+        }
+    }
+
+    // 数组中的元素位置置换
+    function swap(arr, x, y) {
+        var temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
+    }
+
+</script>
+
+<script type="text/javascript">
+
+    /**
+     * 3、对元素差个找。
+     *
+     * 4、对数据元素进行反转。
+     */
+
+    // 查找
+    function searchElement(arr, key) {
+        for (var x = 0; x < arr.length; x++) {
+            if (arr[x] == key) {
+                return x;
+            }
+        }
+        return -1;
+    }
+
+    // 折半查找, 只能作用于有序数组
+    function binarySearch(arr, key) {
+
+        var max, min, mid;
+        min = 0;
+        max = arr.length - 1;
+
+        while (min <= max) {
+            mid = (max + min) >> 1;
+
+            if (key > arr[mid]) {
+                min = mid + 1;
+            } else if (key < arr[mid]) {
+                max = mid - 1;
+            } else {
+                return mid;
+            }
+        }
+
+    }
+
+    // 对数组的反转
+    function reverseArray(arr) {
+        for (var start = 0, end = arr.length - 1; start < end; start++, end--) {
+            swap(arr, start, end);
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

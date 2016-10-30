@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js中的函数演示</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    /**
+     * 函数：就是一个功能的封装体
+     * 定义函数通常需要两个明确。
+     * 1.功能的结果
+     * 2.功能实现中参与运算的位置内容
+     *
+     * js中定义函数的格式
+     * 通过指定的关键字来定义。
+     * function 函数名(参数列表) {
+     *      函数体；
+     *      return 返回值；// 如果没有返回值，return语句可以不写
+     * }
+     */
+
+    function show(x, y) {
+        /**
+         * 函数的一些细节
+         * 1、只要使用函数的名称就是对这个函数的调用。
+         * 2、函数中有一个数组的对传入的参数进行存储，这个数据就是arguments
+         */
+        alert(arguments.length);
+        for (var i = 0; i < arguments.length; i++) {
+            if (i == 0) {
+                document.write(arguments[i]);
+            } else {
+                document.write(',' + arguments[i]);
+            }
+        }
+    }
+
+//    show(1, 5, 8, 7, 25, 3);
+
+
+</script>
+
+<script type="text/javascript">
+
+    function getSum() {
+        return 100;
+    }
+
+    //    var sum = getSum(); // getSum函数运行，并将返回的结果赋值给sum。
+
+    var sum = getSum; // getsum本身是一个函数名，而函数本身在js中是一个对象。getsum就是这个对象的引用
+                      // 将getSum这个引用的地址赋值给sum。这时sum也指向了这个函数对象。
+                      // 相当于这个函数对象有两个函数名称。
+
+
+//    alert('sum=' + sum); // 打印时候如果sum指向的是函数对象，那么会将函数对象的字符创表现形式打印出来，
+                         // 就是该函数的代码定义格式。
+
+    function show2() {
+        alert("show2 run");
+    }
+
+    alert(show2);
+
+    alert(show2());
+
+</script>
+
+
+</body>
+</html>

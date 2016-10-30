@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数的其他表现形式</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    /**
+     * 动态函数:使用的js中内置的一个对象 Function.
+     * 参数列表，函数体都是通过字符串指定的。
+     */
+
+    var add = new Function("x,y","var sum; sum = x+ y; return sum;");
+
+    var sum = add(5,6);
+
+//    alert("sum="+sum);
+
+</script>
+
+<script type="text/javascript">
+
+    /**
+     * 匿名函数:没有名字的函数
+     * 通常是函数的简写形式。
+     */
+
+    var add3 = function(a,b){
+        return a+b;
+    }
+
+//    alert(add3(7,8));
+
+
+    function haha() {
+        alert("haha run");
+    }
+
+    var xixi = haha;
+
+    // 上述代码可以简写成下面的方式
+    var xixi = function () {
+        alert("haha run")
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -2,11 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jsdemo</title>
+    <title>全局和局部变量</title>
 </head>
 <body>
 
-   
+
+<script type="text/javascript">
+
+    //    for (var x = 0; x < 3; x++) { // 在脚本片段中定义的变量，是全局变量
+    //        document.write("x=" + x);
+    //    }
+
+    //    function show() {
+    //        var x = 6; // 局部变量
+    //    }
+
+    var x = 3;// 全局变量x
+
+    function show(x) {// 函数局部变量x
+        x = 8;
+    }
+
+    show(x); // 不会执行
+
+    document.write("x="+x); // x= 3;
+
+</script>
 
 
 </body>
